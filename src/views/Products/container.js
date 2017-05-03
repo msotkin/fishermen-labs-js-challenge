@@ -1,18 +1,14 @@
 import { connect } from 'react-redux'
 
-import { fetchProducts } from '../../store/products/duck'
+import { selectProduct } from '../../store/products/duck'
 
 import Products from './component'
 
-const ProductsContainer = connect(
+const ProductContainer = connect(
   //Map state to props
-  (state) => ({
-    phase: state.products.phase,
-    products: state.products.data,
-    error: state.products.error
-  }),
+  () => ({}),
   //Map actions to dispatch and props
-  { fetchProducts }
+  { selectProduct }
 )(Products)
 
-export default ProductsContainer
+export default ProductContainer

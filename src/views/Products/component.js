@@ -6,14 +6,10 @@ import FilterLink from '../../components/FilterLink'
 export default class Products extends Component {
 
   static propTypes = {
-    fetchProducts: PropTypes.func.isRequired,
+    selectProduct: PropTypes.func.isRequired,
     phase: PropTypes.string.isRequired,
-    products: PropTypes.array.isRequired
-  }
-
-  componentWillMount() {
-    const { phase, fetchProducts } = this.props
-    if (phase === 'INIT') fetchProducts()
+    products: PropTypes.array.isRequired,
+    error: PropTypes.object
   }
 
   render() {
