@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import promise from 'redux-promise-middleware'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import products from './products/duck'
+import app from './app/duck'
 
 const middleware = [
   thunk,
@@ -11,7 +11,7 @@ const middleware = [
 ]
 
 const reducers = combineReducers({
-  products
+  app
 })
 
 export default (initialState = {}) => createStore(

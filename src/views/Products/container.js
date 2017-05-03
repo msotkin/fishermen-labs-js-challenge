@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { selectProduct } from '../../store/products/duck'
+import { toggleCart } from '../../store/app/duck'
 
 import Products from './component'
 
@@ -8,7 +8,7 @@ const ProductContainer = connect(
   //Map state to props
   () => ({}),
   //Map actions to dispatch and props
-  { selectProduct }
+  { toggleCart }
 )(Products)
 
 export default ProductContainer

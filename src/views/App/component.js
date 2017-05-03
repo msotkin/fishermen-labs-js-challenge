@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 import Products from '../Products/container'
 import SingleProduct from '../SingleProduct/container'
+import Cart from '../Cart/container'
 
 export default class App extends Component {
 
@@ -28,6 +29,7 @@ export default class App extends Component {
           render={() => <Products {...this.props} />}
         />
         <Route exact path="/products/:id" component={SingleProduct} />
+        <Route exact path="/cart" component={Cart} />
       </div>
     )
   }

@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom'
 
 import Item from '../../components/Item'
 
-export default class Products extends Component {
+export default class Cart extends Component {
 
   static propTypes = {
     toggleCart: PropTypes.func.isRequired,
-    phase: PropTypes.string.isRequired,
-    products: PropTypes.array.isRequired,
-    error: PropTypes.object
+    products: PropTypes.array.isRequired
   }
 
   render() {
-    const { products, phase, toggleCart } = this.props
+    const { products, toggleCart } = this.props
     const items = products.map((product) => {
       return (
         <Item key={product.id} product={product} toggleCart={toggleCart} />
@@ -21,12 +19,11 @@ export default class Products extends Component {
     })
 
     return (
-      (phase === 'SUCCESS') &&
-          <div>
-            <h1>Products</h1>
-            <Link to="/cart">Cart</Link>
-            {items}
-          </div>
+      <div>
+        <h1>Cart</h1>
+        <Link to="/products">Products</Link>
+        {items}
+      </div>
     )
   }
 }
